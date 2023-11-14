@@ -42,4 +42,10 @@ public class SoccerTeam {
         this.totalGoal = 0;
         this.reset(this);
     }
+    public int gettotalGame(){
+        return this.totalGame;
+    }
+    public int getTotalGoal(){
+        return this.totalGoal;
+    }
 }
