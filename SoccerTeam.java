@@ -5,11 +5,11 @@ public class SoccerTeam {
     public int score;
     public int totalGame = 0;
     public int totalGoal = 0;
-    public SoccerTeam(int wins, int loss, int ties, int score){
-        this.wins = wins;
-        this.loss = loss;
-        this.ties = ties;
-        this. score = score;
+    public SoccerTeam(){
+        this.wins = 0;
+        this.loss = 0;
+        this.ties = 0;
+        this. score = 0;
     }
     public void played(SoccerTeam other, int myScore, int otherScore){
         this.totalGame++;
@@ -30,7 +30,7 @@ public class SoccerTeam {
         }
     }
     public int Calculate(SoccerTeam current){
-        return current.wins*3+current.ties;
+        return current.wins * 3 + current.ties;
     }
     public void reset(SoccerTeam current){
         current.wins = 0;
