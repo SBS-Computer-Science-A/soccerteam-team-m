@@ -19,8 +19,8 @@ public class PlayTournament {//testing class for SoccerTeam
         System.out.println("team3: "+ team3.Calculate());
         System.out.println("team4: "+ team4.Calculate());
         //print out each team's score based on their result
-        System.out.println("total game played: "+ (team1.getTotalGame()+team2.getTotalGame()+team3.getTotalGame()+team4.getTotalGame()));
-        System.out.println("total goal get: " + (team1.getTotalGoal()+team2.getTotalGoal()+team3.getTotalGoal()+team4.getTotalGoal()));
+        System.out.println("total game played: "+ SoccerTeam.getTotalGame());
+        System.out.println("total goal get: " + SoccerTeam.getTotalGoal());
         //print out the tournament's statistics
         team1.reset();
         team2.reset();
@@ -45,8 +45,8 @@ public class PlayTournament {//testing class for SoccerTeam
         System.out.println("team3: "+ team3.Calculate());
         System.out.println("team4: "+ team4.Calculate());
         //test the new score of each team
-        System.out.println("total game played: "+ (team1.getTotalGame()+team2.getTotalGame()+team3.getTotalGame()+team4.getTotalGame()));
-        System.out.println("total goal get: " + (team1.getTotalGoal()+team2.getTotalGoal()+team3.getTotalGoal()+team4.getTotalGoal()));
+        System.out.println("total game played: "+ SoccerTeam.getTotalGame());
+        System.out.println("total goal get: " + SoccerTeam.getTotalGoal());
         //test the second tournament's result
     }
 }

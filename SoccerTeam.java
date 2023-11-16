@@ -1,22 +1,19 @@
 public class SoccerTeam {//Object class for SoccerTeam
-    public static int wins;
-    public static int loss;
-    public static int ties;
-    public static int score;
-    private int totalGame;//individual team's game played
-    private int totalGoal;//individual team's goal number
+    public int wins;
+    public int loss;
+    public int ties;
+    public int score;
+    private static int totalGame = 0;//individual team's game played
+    private static int totalGoal = 0;//individual team's goal number
     public SoccerTeam(){//constructor of SoccerTeam
         wins = 0;
         loss = 0;
         ties = 0;
         score = 0;
-        totalGame = 0;
-        totalGoal = 0;
     }
     public void played(SoccerTeam other, int myScore, int otherScore){//update wins, loss, ties based on scores
-        this.totalGame++;
-        this.totalGoal+=myScore;
-        other.totalGoal+=otherScore;
+        totalGame++;
+        totalGoal+=(myScore+otherScore);
         this.score = myScore;
         other.score = otherScore;
         if(this.score > other.score){
@@ -41,14 +38,14 @@ public class SoccerTeam {//Object class for SoccerTeam
         this.ties = 0;
     }
     public void start(){//start a tournament, which reset one team's totalGame and totalGoal
-        this.totalGame = 0;
-        this.totalGoal = 0;
+        totalGame = 0;
+        totalGoal = 0;
         this.reset();
     }
-    public int getTotalGame(){
-        return this.totalGame;
+    public static int getTotalGame(){
+        return totalGame;
     }//accessor method for totalGame
-    public int getTotalGoal(){
-        return this.totalGoal;
+    public static int getTotalGoal(){
+        return totalGoal;
     }//accessor method for total Goal
 }
