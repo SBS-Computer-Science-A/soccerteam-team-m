@@ -1,26 +1,29 @@
-public class SoccerTeam {
-    public int wins;
-    public int loss;
-    public int ties;
-    public int score;
-    public int totalGame = 0;
-    public int totalGoal = 0;
-    public SoccerTeam(){
-        this.wins = 0;
-        this.loss = 0;
-        this.ties = 0;
-        this. score = 0;
+public class SoccerTeam {//Object class for SoccerTeam
+    public static int wins;
+    public static int loss;
+    public static int ties;
+    public static int score;
+    private int totalGame;//individual team's game played
+    private int totalGoal;//individual team's goal number
+    public SoccerTeam(){//constructor of SoccerTeam
+        wins = 0;
+        loss = 0;
+        ties = 0;
+        score = 0;
+        totalGame = 0;
+        totalGoal = 0;
     }
-    public void played(SoccerTeam other, int myScore, int otherScore){
+    public void played(SoccerTeam other, int myScore, int otherScore){//update wins, loss, ties based on scores
         this.totalGame++;
-        this.totalGoal+=(myScore+otherScore);
-        myScore = this.score;
-        otherScore = other.score;
-        if(myScore > otherScore){
+        this.totalGoal+=myScore;
+        other.totalGoal+=otherScore;
+        this.score = myScore;
+        other.score = otherScore;
+        if(this.score > other.score){
             this.wins++;
             other.loss++;
         }
-        else if(myScore == otherScore){
+        else if(this.score == other.score){
             this.ties++;
             other.ties++;
         }
@@ -29,23 +32,23 @@ public class SoccerTeam {
             other.wins++;
         }
     }
-    public int Calculate(SoccerTeam current){
-        return current.wins*3+current.ties;
+    public int Calculate(){
+        return (wins*3+ties);
+    }//calculate team score based on wins, loss, ties
+    public void reset(){//reset a team's wins, loss, ties
+        this.wins = 0;
+        this.loss = 0;
+        this.ties = 0;
     }
-    public void reset(SoccerTeam current){
-        current.wins = 0;
-        current.loss = 0;
-        current.ties = 0;
-    }
-    public void start(){
+    public void start(){//start a tournament, which reset one team's totalGame and totalGoal
         this.totalGame = 0;
         this.totalGoal = 0;
-        this.reset(this);
+        this.reset();
     }
-    public int gettotalGame(){
+    public int getTotalGame(){
         return this.totalGame;
-    }
+    }//accessor method for totalGame
     public int getTotalGoal(){
         return this.totalGoal;
-    }
+    }//accessor method for total Goal
 }
